@@ -20,7 +20,7 @@ jobs:
       with:
         java-version: '11'
 
-    - name: Build with Maven
+    - name: Build with Gradle
       run: mvn clean install
 
     - name: Deploy to Azure Web App
