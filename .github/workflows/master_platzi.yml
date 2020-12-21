@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy WAR app to Azure Web App - platzi
+name: Build and deploy JAR app to Azure Web App - platzi
 
 on:
   push:
@@ -20,10 +20,13 @@ jobs:
       with:
         java-version: '11'
 
+    - name: Build with Maven
+      run: mvn clean install
+
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'platzi'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_18b8d42bb5c14e92bc4316e2a471d0d7 }}
-        package: '${{ github.workspace }}/target/*.war'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f18b35430c4e458b967474a07d37662e }}
+        package: '${{ github.workspace }}/target/*.jar'
