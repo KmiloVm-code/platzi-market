@@ -27,7 +27,7 @@ jobs:
       run: ./gradlew build
 
     - name: Deploy to Azure Web App
-      uses: PublishBuildArtifacts@1
+      uses: azure/PublishBuildArtifacts@1
       with:
         app-name: 'platzi'
         slot-name: 'production'
