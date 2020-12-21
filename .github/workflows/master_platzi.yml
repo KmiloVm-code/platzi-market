@@ -21,7 +21,7 @@ jobs:
         java-version: '11'
 
     - name: Build with gradle
-      run: gradle install
+      run: gradle
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
