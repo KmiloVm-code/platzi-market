@@ -21,7 +21,7 @@ jobs:
         java-version: '11'
 
     - name: Build with gradle
-      run: ./gradlew build
+      run: mvn clean install ~= ./gradlew clean build
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
