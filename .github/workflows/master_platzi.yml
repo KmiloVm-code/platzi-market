@@ -32,4 +32,4 @@ jobs:
         app-name: 'platzi'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_6e94105800a94835bcd3fe79d7977d3d }}
-        package: '${{ github.workspace }}/build/libs*.jar'
+        package: '${{ github.workspace }}/*.jar'
